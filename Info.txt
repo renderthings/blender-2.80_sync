@@ -1,0 +1,72 @@
+//blender-2.80_sync//
+
+What it does:
+Keep updated and portable a unique blender 2.80 installation, with all your personal addons!
+
+How to use it:
+- Download from https://builder.blender.org/download/ a fresh new version of blender 2.80.
+- Download from the link below blender-2.80_sync.zip and extract it to a folder of your choice in your pc (be sure to have write permission) or in a usb drive. 
+- Drag and drop the downloaded blender zip file onto start.bat (in: your_path/blender-2.80_sync/updater)
+
+What is contained inside:
+blender-2.80_sync is made by to 2 folders:
+ - updater folder: contain the main batch file (start.bat) and the lib folder with all the subroutines called from start.bat. It will even contain a temp folder after the first installation.
+ - program folder: the portable blender 2.80 program folder, with all the extra folders for portable use (it will be created after the first installation).
+
+How it works:
+The script will extract the dropped zip to a new folder (your_path/blender-2.80/program) adding some custom folders that put all autosave, cache configs, personal addons and temp files within the program folder tree. The temp and personal script paths will be set accordingly in user preferences file. This will make the blender installation full portable.
+
+I must give a big thanks to Riccardo Giovanetti (Harvester) who have made a super useful tutorial about this process on blender.it.
+https://www.blender.it/forums/topic/installare-blender-2-78-versione-portable-guida-versione-html
+
+!!important#1!!
+You must have 7-zip installed on your pc at the default location: C:\Program Files\7-Zip
+I'll develop soon a version of the script without the need of a 7-zip local installation.
+
+!!Important#2!!
+When blender starts for the first time you can choose your preferred settings in the 2.80 quick setup interface (see pic); after completing the quick setup, close (!!close!!) blender, so to let the script editing the preferences paths to temp and addons personal folders.
+
+When you'll want to update the blender 2.80 version, all you have to do is just download the brand new 2.80 version and drag and drop again the zip file onto start.bat.
+The script will recognize that it is an update and will ask you if you want to delete or keep the user preferences and startup files (i have read somewhere that from version to version keeping the same prefs file could make some mistake). 
+
+If you decide to delete them the script will save an enabled addons list file that will read at the next startup, reloading the addons you have enable previously. This is possible because you will install ALL of you personal addons (the ones not included in blender) to the personal script path, choosing in the user preference Target Path the "User Pref" option (see pic).
+All the blender program files will be replaced by the newer ones, excluding the custom directories added by the first installation! (so for example all your custom addons wil be still there).
+
+!!Important#2!!
+When blender starts for the first time you can choose your preferred settings in the 2.80 quick setup interface (see pic); after completing the quick setup, close (!!close!!) blender, so to let the script editing the preferences paths to temp and addons personal folders.
+
+Otherwise if you decide to keep preference and startup files, blender will use them to restore the enabled addons (as well as all other custom setting you may have had). In this case the above important note does not apply and blender will not run automatically at the end of the process.
+
+The installation will be fully portable, meaning that you can copy the main folder (blender-2.80_sync) wherever you want and continue to work with that version of blender or update the version within it.
+!!Important#3!!
+When you'll copy/move the folder, for the first run of blender use update_prefs-and_run.bat (in: your_path/blender-2.80_sync/updater), this script will update the temp and personal addons paths in the user preferences and subsequently run blender (this time you don't have to close it)
+This must be done only for the first run after a copy/move of the main folder (blender-2.80_sync), so after that you can run blender as usual from blender.exe in your_path/blender-2.80_sync/program.
+
+So...
+
+The good
+- It keeps updated and portable a unique blender 2.80 installation, with all the addons you have added.
+- Updating the blender version will update all the addons bundled within blender, without deleting your personal addons.
+- The main folder (blender-2.80_sync) can be renamed as you want
+- Fully portable: you can copy/move the entire folder wherever you want, even to USB device, keeping the ability to update the version. For this feature read carefully the important#3 note above.
+- It keeps the addons you add to a separate folder: 2.80/scripts/personal addons (easy to copy/check/look for updates where not automatically performed)
+ - It writes a log report in the updater folder
+
+
+The bad
+- Only windows, since based on windows batch scripting language ..ehm yes, i hear you!
+- Not really solid code (let me repeat loudly: Not really solid code! ;)
+- Error checking not always reliable, i had a lot of problems to get error messages concurrently on the console screen and written into a log file, so the erorr messages will be partially display on the console window and partially written into the log report in the updater folder.
+
+
+Credits: 
+Riccardo Giovanetti (Harvester) for his super useful tutorial about making a fully portable version of blender.
+https://www.blender.it/forums/topic/installare-blender-2-78-versione-portable-guida-versione-html
+
+
+Please read:
+."i'm not a programmer, i've done this script for my personal use and it works (quite) well for me, i hope it will be the same for you, but it is not guaranteed!"..yes that's it :)
+..and sorry for my english grammar mistakes!
+
+Ciro
+
