@@ -63,5 +63,5 @@ Please read:
 ..i'm not a programmer, i've done this script for my personal use and it works (quite) well for me, i hope it will be the same for you, but it is not guaranteed!"..yes that's it :)
 ..and sorry for my english grammar mistakes!
 
-Ciro
+Ciro 
 
