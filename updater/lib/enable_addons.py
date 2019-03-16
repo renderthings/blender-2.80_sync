@@ -28,5 +28,6 @@ os.chdir(pathLib)
 with open('addons_list.csv', newline='') as csvfile:
     csvreader = list(csv.reader(csvfile, delimiter=','))   
     for i in (csvreader[0]):
-        bpy.ops.wm.addon_enable(module=i) #disable #enable
+        bpy.ops.preferences.addon_enable(module=i) #disable #enable
+        #bpy.ops.wm.addon_enable(module=i) #disable #enable
 bpy.ops.wm.save_userpref()
